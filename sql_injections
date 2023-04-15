@@ -1,0 +1,7 @@
+SQL injection can be performed based on the cheatsheets, possibly following an order:
+
+error-based
+
+Boolean conidtion
+
+union-based
