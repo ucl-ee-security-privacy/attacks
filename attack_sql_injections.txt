@@ -5,3 +5,33 @@ error-based
 Boolean conidtion
 
 union-based
+
+
+% I assume that the 'map' java backends are of the same security level as DVWA low;
+
+% For MySQL, perform the following steps
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% DVWA use MariaDB, with all steps avaialble here: https://www.golinuxcloud.com/dvwa-sql-injection/#Pre-requisites
+
+% step 1: error-based to know the DBMS
+
+% step 2: deduct the version:
+
+% step n: boolean condition based attack to show all information in the database
+£' or '1'='1
+
