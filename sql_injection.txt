@@ -1,0 +1,6 @@
+% I assume that the 'map' java backends are of the same security level as DVWA low; DVWA use MariaDB
+
+% step 1: boolean condition based attack to show all information in the database
+£' or '1'='1
+
+% step 2: 
