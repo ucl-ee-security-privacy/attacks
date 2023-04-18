@@ -1,0 +1,7 @@
+% CSRF automated test with kali tools
+
+XSRFProbe command:
+> xsrfprobe -u 10.0.2.2:9090
+% Note that we run the web server on host machining and use configured the xsrfprobe tool on kali linux;
+% Thus the 'localhost' address corresponds to the IP address of the virtual NAT, hence 10.0.2.2
+% port number is self-defined and can be abitrary
