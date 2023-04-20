@@ -6,4 +6,11 @@
 <script>alert(document.cookie)</script>
 
 // test more tricky attacks
-<img src=x onerror=\"alert('Please buy shimmer's glasses!')\">
+<img src=x onerror=\"alert('Please buy Leo's glasses!')\">
+
+// including a frame with CSRF website
+
+<iframe srcdoc="<script>
+  if (window.confirm('Boost your business')) 
+    {window.open('http://localhost:9000', '_blank');};
+</script>"></iframe>
