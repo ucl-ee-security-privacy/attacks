@@ -1,0 +1,7 @@
+All files name starting with 'attack' contains the attacks we initiated
+
+Note that for kali-based tools, xsser is not listed here for it main requires operations on its GUI;
+sqlmap requires the user to make some choices during the testing process.
+
+The php files gives example of vulnerable website backends of different security levels. We used java as out backend in this project, 
+but the logic here are studied and partially implemented in our backend 
